@@ -6,7 +6,7 @@ import CourseForm from './CourseForm';
 import {authorsFormattedForDropdown} from '../../selectors/selectors';
 import toastr from 'toastr';
 
-export class ManageCoursePage extends React.Component {
+class ManageCoursePage extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -22,7 +22,7 @@ export class ManageCoursePage extends React.Component {
 
   componentWillReceiveProps(nextProps){
     if (this.props.course.id != nextProps.course.id) {
-      this.setstate({course: Object.assign({}. nextProps.course)});
+      this.setState({course: Object.assign({}. nextProps.course)});
     }
   }
 
@@ -30,7 +30,7 @@ export class ManageCoursePage extends React.Component {
     const field = event.target.name;
     let course = this.state.course;
     course[field] = event.target.value;
-    return this.setstate({course: course});
+    return this.setState({course: course});
   }
 
   courseFormIsValid() {
