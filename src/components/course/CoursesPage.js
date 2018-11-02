@@ -7,7 +7,7 @@ import swal from 'sweetalert';
 import toastr from 'toastr';
 import {browserHistory} from 'react-router';
 
-class CoursesPage extends React.Component {
+export class CoursesPage extends React.Component {
   constructor(props, context) {
     super(props, context);
 
