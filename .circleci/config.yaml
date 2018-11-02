@@ -1,37 +1,28 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/react-redux-ps-admin
     docker:
-      - image: circleci/node:10.10.0
+      # specify the version you desire here
+      - image: circleci/node:7.10
+    working_directory: ~/repo
     steps:
       - checkout
-      - run:
-          name: update-npm
-          command: 'sudo npm install -g npm@5'
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
       - run:
-          name: install-npm-wee
+          name: install dependencies
           command: npm install
-      - run:
-         name: install nyc
-         command: npm install nyc@12.0.2
+
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
           paths:
-            - ./node_modules
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # run tests!
       - run:
-          name: test
+          name: run-text
           command: npm test
-      - run:
-          name: code-coverage
-          command: 'npm run coverage'
-      - store_artifacts:
-          path: test-results.xml
-          prefix: tests
-      - store_artifacts:
-          path: coverage
-          prefix: coverage
-      - store_test_results:
-          path: test-results.xml
