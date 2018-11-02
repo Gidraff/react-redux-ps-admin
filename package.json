@@ -8,7 +8,7 @@
     "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "test": "nyc --reporter=html --reporter=text mocha --reporter=spec tools/testSetup.js \"src/**/*.test.js\"",
+    "test": "node_modules/.bin/nyc --reporter=html --reporter=text mocha --reporter=spec tools/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "clean-dist": "npm run remove-dist && mkdir dist",
