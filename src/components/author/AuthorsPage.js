@@ -8,7 +8,7 @@ import {browserHistory} from 'react-router';
 import toastr from 'toastr';
 
 
-class AuthorsPage extends React.Component {
+export class AuthorsPage extends React.Component {
   constructor(props, context) {
     super(props, context);
 
