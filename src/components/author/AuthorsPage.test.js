@@ -35,3 +35,4 @@ describe('AuthorsPage Component', () => {
     expect(wrapper.find('AuthorList').length).toEqual(1);
   });
 });
+});
