@@ -10,6 +10,15 @@ export const courseFormProps = {
   allAuthors: []
 };
 
+export const AuthorFormProps = {
+  author: {
+    firstName: 'John',
+    lastName: 'Doe'
+  },
+  saving: false,
+  errors: {}
+};
+
 export const courseListProps = {
   courses: [
     {
@@ -43,6 +52,31 @@ export const courseListProps = {
   ]
 };
 
+export const AuthorListProps = {
+  authors: [
+    {
+      id: 'cory-house',
+      firstName: 'Cory',
+      lastName: 'House'
+    },
+    {
+      id: 'scott-allen',
+      firstName: 'Scott',
+      lastName: 'Allen'
+    },
+    {
+      id: 'dan-wahlin',
+      firstName: 'Dan',
+      lastName: 'Wahlin'
+    },
+    {
+      id: 'john-doe',
+      firstName: 'John',
+      lastName: 'Doe'
+    }
+  ]
+};
+
 export const CourseListRowProps = {
   course: {
     id: 'course1-software',
@@ -50,6 +84,14 @@ export const CourseListRowProps = {
     authorId: 'author-one',
     category: 'software',
     length: 5
+  }
+};
+
+export const AuthorListRowProps = {
+  author: {
+    id: 'john-doe',
+    firstName: 'John',
+    lastName: 'Doe'
   }
 };
 
